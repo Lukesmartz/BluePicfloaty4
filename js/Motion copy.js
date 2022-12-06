@@ -21,7 +21,7 @@ function setup() {
 
     xPos = width/2;
     yPos = height/2; //Bouncing Floaty
-    xSpeed = 1;
+    xSpeed = -1;
     ySpeed = 1;
 
     xPos2 = width/2;
@@ -29,18 +29,18 @@ function setup() {
     xSpeed2 = 1;  
     ySpeed2 = 1;
 
-    x = width/2;
-    y = height/4 // 1st side scrolling circles
+    x = width/2; // 1st side scrolling circles
+    y = height/4 
     d = 200;
     speed = 1 ;
 
-    x2 = width/.9;
-    y2 = height/2; //side scrolling circles
+    x2 = width/.9; //side scrolling circles
+    y2 = height/2; 
     d2 = 200;
     speed2 = 1;
 
-    x3 = width/7;
-    y3 = height/3; //side scrolling circles
+    x3 = width/7; //side scrolling circles
+    y3 = height/12; 
     d3 = 200;
     speed3 = 1;
 
@@ -72,7 +72,7 @@ function draw() {
 
     //horizontal movement
     xPos = xPos + xSpeed;
-    if (xPos + -200 > width || xPos -1 < 0 ){
+    if (xPos + 0 > width || xPos -10 < 10 ){
         xSpeed *= -1; //inverts the value
     }
  
@@ -88,16 +88,12 @@ function draw() {
    if (xPos2 + 50 > width || xPos-50 < 0 ){
        xSpeed *= -1; //inverts the value
    }
-
-
     //vertical movement
     yPos2 = yPos2 + ySpeed2;
     if (yPos2+270 > height || yPos2-50 < 0){
         ySpeed2 *= -1;
 
     }
-    
-  
     x++ ; 1
     x = x + speed;
 
@@ -105,20 +101,15 @@ function draw() {
        //return to zero. Then new variable halfs the center point again so it goes off screen.
 
        x = 0 - d/2;
-
-   }
-
+    }
     y++ ; 1
     y = y + speed;
 
    if(y > height + d/2){  
 
        y = 0 - d/2;
-
-
-
-   }
- 
+   
+    }
     x2 ++ ; 1 
     x2 = x2 + speed2;
 
@@ -127,16 +118,14 @@ function draw() {
        x2 = 0 - d2/2;
 
    }
-
    y2 ++ ; 1 
    y2 = y2 + speed2;
 
   if(y2 > height + d2/2){ //fallingright brick 3
 
       y2 = 0 - d2/1;
-  }
-
-    
+  
+    }
     x3 ++ ; 1 
   x3 = x3 + speed3;
 
@@ -144,32 +133,58 @@ function draw() {
 
      x3 = 0 - d3/2;
 
+}
+y3 ++ ; 1 
+y3 = y3 + speed3;
 
- }
+if(y3 > height + d3/2){  
+
+   y3 = 0 - d3/2;
+}
+
+fill('#0D2064');
+rect(55, y3, 5, 40,); //falling left brick 3
+
+fill('#0D1D57');
+rect(50, y3, 5, 40,); //falling left brick 3
+
+fill('#0D2064');
+rect(505, y3, 10, 150,); //falling right brick 3
+
+fill('#0D1D57');
+rect(500, y3, 10, 150,); //falling right brick 4
 
 
- fill( '#0D2064');
- ellipse(xPos, 27, 80, 80,); //3|4thbackground floaty 
+fill('#0D2064');
+rect(250, y3, 10, 75,); //falling right brick 3
+
+fill('#0D1D57');
+rect(245, y3, 10, 75,); //falling right brick 4
+
 
  fill( '#0D1D57');
- ellipse(xPos , 25, 72 , 72,); //3|4thbackground floaty2
+ ellipse(xPos, 70, 60, 60,); //3|4thbackground floaty 
 
- fill( '#0D1F60');
- ellipse(xPos, 425, 28, 28,); //3|3rdbackground floaty 
+ fill( '#102572');
+ ellipse(xPos , 72, 52 , 52,); //3|4thbackground floaty2
 
+ fill( '#07195A');
+ ellipse(xPos, 400, 5, 5,); //3|3rdbackground floaty 
 
- fill( '#0D1D57');
- ellipse(xPos , 300, 48, 48,); //3|background floaty 
-
- fill( '#0D2064');
- ellipse(xPos , 302, 40 , 40,); //3|background floaty2
-
- fill( '#0D2064');
- ellipse(xPos , 170, 58, 58,); //3|2ndbackground floaty 
 
  fill( '#0D1D57');
- ellipse(xPos , 167, 50 , 50,); //3|2ndbackground floaty2
+ ellipse(xPos , 348, 18, 18,); //3|background floaty 
 
+ fill( '#0D2064');
+ ellipse(xPos , 350, 15 , 15,); //3|background floaty2
+
+ fill( '#0D1D57');
+ ellipse(xPos , 220, 38, 38,); //3|2ndbackground floaty 
+
+ fill( '#0D2064');
+ ellipse(xPos , 222, 32 , 32,); //3|2ndbackground floaty2
+
+ 
  
  fill('#142666');
  rect(204, yPos, 5, 60,); //falling left brick 2 mirror
